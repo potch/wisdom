@@ -14,6 +14,7 @@ To use:
 Structure:
 
 - `build.js` is a nodejs script that takes `wisdom.md` and generate different outputs (right now, JSON and HTML)
-- `template.hbs` is an HTML [Handlebars]() template for generating
+  - uses [Handlebars](https://handlebarsjs.com/) for templating, [markdown-it](https://github.com/markdown-it/markdown-it) for parsing markdown, and [Prettier](https://prettier.io/docs/api#prettierformatsource-options) for output formatting
+- `template.hbs` is the document template for the HTML output
 - `output/` is the directory for holding generated assets.
 - `package.json` manages CLI commands and 3rd party libraries used by `build.js`
