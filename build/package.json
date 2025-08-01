@@ -3,6 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+    "dev": "tinyserve -d output -w 'build.js template.hbs' -x 'npm run build'",
+    "serve": "tinyserve -d output",
     "build": "node build.js"
   },
   "keywords": [],
@@ -10,6 +12,7 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "@potch/tinyserve": "^1.5.1",
     "handlebars": "^4.7.8",
     "markdown-it": "^14.1.0",
     "prettier": "^3.6.2"

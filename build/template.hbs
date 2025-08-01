@@ -14,10 +14,27 @@
       max-width: 100%;
       margin: 0 auto;
     }
+    #random {
+      margin: 2em;
+    }
   </style>
+  <script defer>
+    fetch("./wisdom.json").then(response => response.json()).then(wisdoms => {
+      function randomWisdom() {
+        document.querySelector("#random").innerHTML = wisdoms[Math.floor(Math.random() * wisdoms.length)];
+      }
+      document.querySelector("#random-next").onclick = randomWisdom;
+      randomWisdom();
+    });
+  </script>
 </head>
 <body>
   <div id="main">
+    <div>
+      <h1>A Random Wisdom</h1>
+      <div id="random"></div>
+      <button id="random-next">another please</button>
+    </div>
     {{{ content }}}
   </div>
 </body>

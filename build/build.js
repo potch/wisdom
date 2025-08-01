@@ -37,7 +37,7 @@ async function build() {
           content.startsWith("Unrelated:") ||
           content.startsWith("Relatedly unrelated:")
         ) {
-          wisdoms[wisdoms.length - 1] += "<br>" + content;
+          wisdoms[wisdoms.length - 1] += "<br><br>" + content;
         } else {
           // okay no related text, add a new wisdom
           wisdoms.push(content);
