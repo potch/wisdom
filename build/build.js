@@ -21,7 +21,13 @@ async function build() {
   // instead of converting straight to HTML, get the parsed markdown for processing.
   const tokens = md.parse(raw, {});
   console.log("parsing wisdoms");
+  let seenIntro = false;
   tokens.forEach((t, i, tokens) => {
+    // skip the introductory list items
+    if (t.type === "inline" && t.content === "The Wisdom So Far") {
+      seenIntro = true;
+    }
+    if (!seenIntro) return;
     // find list items
     if (t.type === "list_item_open") {
       // skip to the content of the list item
